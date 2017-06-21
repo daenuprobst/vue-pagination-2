@@ -1,15 +1,15 @@
 {
-  "name": "vue-pagination-2",
-  "description": "Vue.js 2 pagination component",
+  "name": "vue-pagination-2-bulma",
+  "description": "A bulma enabled Vue.js 2 pagination component",
   "version": "0.3.1",
   "keywords": [
     "pagination",
     "vuejs2",
-    "bootstrap"
+    "bulma"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/matfish2/vue-pagination-2"
+    "url": "https://github.com/daenuprobst/vue-pagination-2"
   },
   "files": [
     "compiled",
