@@ -1,6 +1,6 @@
 {
   "name": "vue-pagination-2-bulma",
-  "description": "A bulma enabled Vue.js 2 pagination component",
+  "description": "A bulma enabled vue.js 2 pagination component",
   "version": "0.3.1",
   "keywords": [
     "pagination",
@@ -23,11 +23,12 @@
   "licenses": "MIT",
   "main": "index.js",
   "scripts": {
-    "compile": "babel src -d compiled"
+    "build": "babel src -d compiled"
   },
   "devDependencies": {
     "babel-helper-vue-jsx-merge-props": "^2.0.2",
     "babel-plugin-syntax-jsx": "^6.18.0",
-    "babel-plugin-transform-vue-jsx": "^3.3.0"
+    "babel-plugin-transform-vue-jsx": "^3.3.0",
+    "babel-preset-es2015": "^6.24.1"
   }
 }

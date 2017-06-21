@@ -12,9 +12,9 @@ module.exports = function() {
         )
   }.bind(this));
 
-  return <div class="VuePagination">
+  return <nav class="pagination VuePagination">
   <ul v-show={this.totalPages>1}
-  class="pagination VuePagination__pagination">
+  class="pagination-list VuePagination__pagination">
 
   <li class={"VuePagination__pagination-item page-item VuePagination__pagination-item-prev-chunk "+this.allowedChunkClass(-1)}>
   <a class="page-link" href="javascript:void(0);"
@@ -42,6 +42,6 @@ module.exports = function() {
 
   <p v-show={parseInt(this.records)}
   class="VuePagination__count">{this.count}</p>
-  </div>
+  </nav>
 }
 }

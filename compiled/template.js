@@ -14,7 +14,7 @@ module.exports = function () {
           { "class": "page-link", attrs: { href: "javascript:void(0);"
             },
             on: {
-              click: this.setPage.bind(this, page)
+              "click": this.setPage.bind(this, page)
             }
           },
           [page]
@@ -23,8 +23,8 @@ module.exports = function () {
     }.bind(this));
 
     return h(
-      "div",
-      { "class": "VuePagination" },
+      "nav",
+      { "class": "pagination VuePagination" },
       [h(
         "ul",
         {
@@ -33,7 +33,7 @@ module.exports = function () {
             value: this.totalPages > 1
           }],
 
-          "class": "pagination VuePagination__pagination" },
+          "class": "pagination-list VuePagination__pagination" },
         [h(
           "li",
           { "class": "VuePagination__pagination-item page-item VuePagination__pagination-item-prev-chunk " + this.allowedChunkClass(-1) },
@@ -42,7 +42,7 @@ module.exports = function () {
             { "class": "page-link", attrs: { href: "javascript:void(0);"
               },
               on: {
-                click: this.setChunk.bind(this, -1)
+                "click": this.setChunk.bind(this, -1)
               }
             },
             ["<<"]
@@ -55,7 +55,7 @@ module.exports = function () {
             { "class": "page-link", attrs: { href: "javascript:void(0);"
               },
               on: {
-                click: this.prev.bind(this)
+                "click": this.prev.bind(this)
               }
             },
             ["<"]
@@ -68,7 +68,7 @@ module.exports = function () {
             { "class": "page-link", attrs: { href: "javascript:void(0);"
               },
               on: {
-                click: this.next.bind(this)
+                "click": this.next.bind(this)
               }
             },
             [">"]
@@ -81,7 +81,7 @@ module.exports = function () {
             { "class": "page-link", attrs: { href: "javascript:void(0);"
               },
               on: {
-                click: this.setChunk.bind(this, 1)
+                "click": this.setChunk.bind(this, 1)
               }
             },
             [">>"]
