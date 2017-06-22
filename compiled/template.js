@@ -25,6 +25,20 @@ module.exports = function () {
       "nav",
       { "class": "pagination VuePagination" },
       [h(
+        "a",
+        { "class": "pagination-previous", on: {
+            "click": this.prev.bind(this)
+          }
+        },
+        ["Previous"]
+      ), h(
+        "a",
+        { "class": "pagination-next", on: {
+            "click": this.next.bind(this)
+          }
+        },
+        ["Next page"]
+      ), h(
         "ul",
         {
           directives: [{
@@ -46,33 +60,7 @@ module.exports = function () {
             },
             ["<<"]
           )]
-        ), h(
-          "li",
-          { "class": "VuePagination__pagination-item VuePagination__pagination-item-prev-page " + this.allowedPageClass(this.page - 1) },
-          [h(
-            "a",
-            { "class": "pagination-link", attrs: { href: "javascript:void(0);"
-              },
-              on: {
-                "click": this.prev.bind(this)
-              }
-            },
-            ["<"]
-          )]
         ), items, h(
-          "li",
-          { "class": "VuePagination__pagination-item VuePagination__pagination-item-next-page " + this.allowedPageClass(this.page + 1) },
-          [h(
-            "a",
-            { "class": "pagination-link", attrs: { href: "javascript:void(0);"
-              },
-              on: {
-                "click": this.next.bind(this)
-              }
-            },
-            [">"]
-          )]
-        ), h(
           "li",
           { "class": "VuePagination__pagination-item VuePagination__pagination-item-next-chunk " + this.allowedChunkClass(1) },
           [h(

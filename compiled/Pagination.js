@@ -29,7 +29,8 @@ module.exports = {
     countText: {
       type: String,
       required: false,
-      default: 'Showing {from} to {to} of {count} records|{count} records|One record'
+      default: ''
+      //default: 'Showing {from} to {to} of {count} records|{count} records|One record'
     },
     vuex: {
       type: Boolean
