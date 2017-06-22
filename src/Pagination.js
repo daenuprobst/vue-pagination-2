@@ -140,7 +140,7 @@ allowedChunkClass: function(direction) {
   return this.allowedChunk(direction)?'':'disabled';
 },
 activeClass: function(page) {
-  return this.page==page?'active':'';
+  return this.page==page?'is-current':'';
 }
 }
 }
