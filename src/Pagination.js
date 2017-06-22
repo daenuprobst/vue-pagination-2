@@ -92,7 +92,7 @@ module.exports =
     let to = this.page==(this.totalPages)?this.records:from + this.perPage - 1;
     let parts = this.countText.split('|');
     let i = Math.min(this.records==1?2:this.totalPages==1?1:0, parts.length-1);
-
+    
     return parts[i].replace('{count}', this.records)
     .replace('{from}', from)
     .replace('{to}', to)

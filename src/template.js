@@ -29,9 +29,6 @@ module.exports = function() {
   on-click={this.setChunk.bind(this,1)}>&gt;&gt;</a>
   </li>
   </ul>
-
-  <p v-show={parseInt(this.records)}
-  class="VuePagination__count">{this.count}</p>
   </nav>
 }
 }
