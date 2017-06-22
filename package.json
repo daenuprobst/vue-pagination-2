@@ -1,7 +1,7 @@
 {
-  "name": "vue-pagination-2-bulma",
+  "name": "vue-bulma-pagination-2",
   "description": "A bulma enabled vue.js 2 pagination component",
-  "version": "0.3.2",
+  "version": "0.3.5",
   "keywords": [
     "pagination",
     "vuejs2",
