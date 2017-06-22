@@ -11,7 +11,7 @@ module.exports = function () {
         { "class": "VuePagination__pagination-item " + this.activeClass(page) },
         [h(
           "a",
-          { "class": "pagination-link", attrs: { href: "javascript:void(0);" },
+          { "class": "pagination-link " + this.activeClass(page), attrs: { href: "javascript:void(0);" },
             on: {
               "click": this.setPage.bind(this, page)
             }
