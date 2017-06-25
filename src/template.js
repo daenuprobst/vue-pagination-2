@@ -18,15 +18,17 @@ module.exports = function() {
   class="pagination-list VuePagination__pagination">
 
   <li class={"VuePagination__pagination-item VuePagination__pagination-item-prev-chunk "+this.allowedChunkClass(-1)}>
-  <a class="pagination-link" href="javascript:void(0);"
-  on-click={this.setChunk.bind(this,-1)}>&lt;&lt;</a>
+  <a class={"pagination-link "+this.activeClass(page)} href="javascript:void(0);" on-click={this.first.bind(this)}>1</a>
   </li>
+
+  <li><span class="pagination-ellipsis">&hellip;</span></li>
 
   {items}
 
+  <li><span class="pagination-ellipsis">&hellip;</span></li>
+
   <li class={"VuePagination__pagination-item VuePagination__pagination-item-next-chunk "+this.allowedChunkClass(1)}>
-  <a class="pagination-link" href="javascript:void(0);"
-  on-click={this.setChunk.bind(this,1)}>&gt;&gt;</a>
+  <a class={"pagination-link "+this.activeClass(page)} href="javascript:void(0);" on-click={this.last.bind(this)}>{this.totalPages}</a>
   </li>
   </ul>
   </nav>

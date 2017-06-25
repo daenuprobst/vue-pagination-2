@@ -112,6 +112,12 @@ methods: {
     bus.$emit('vue-pagination::' + this.for, page);
   }
 },
+first: function() {
+  return this.setPage(1);
+},
+last: function() {
+  return this.setPage(this.totalPages);
+},
 next: function() {
   return this.setPage(this.page + 1);
 },
