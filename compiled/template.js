@@ -52,7 +52,7 @@ module.exports = function () {
           { "class": "VuePagination__pagination-item VuePagination__pagination-item-prev-chunk " + this.allowedChunkClass(-1) },
           [h(
             "a",
-            { "class": "pagination-link " + this.activeClass(page), attrs: { href: "javascript:void(0);" },
+            { "class": "pagination-link ", attrs: { href: "javascript:void(0);" },
               on: {
                 "click": this.first.bind(this)
               }
@@ -80,7 +80,7 @@ module.exports = function () {
           { "class": "VuePagination__pagination-item VuePagination__pagination-item-next-chunk " + this.allowedChunkClass(1) },
           [h(
             "a",
-            { "class": "pagination-link " + this.activeClass(page), attrs: { href: "javascript:void(0);" },
+            { "class": "pagination-link ", attrs: { href: "javascript:void(0);" },
               on: {
                 "click": this.last.bind(this)
               }
