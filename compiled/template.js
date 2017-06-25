@@ -52,38 +52,42 @@ module.exports = function () {
           { "class": "VuePagination__pagination-item VuePagination__pagination-item-prev-chunk " + this.allowedChunkClass(-1) },
           [h(
             "a",
-            { "class": "pagination-link", attrs: { href: "javascript:void(0);"
-              },
+            { "class": "pagination-link " + this.activeClass(page), attrs: { href: "javascript:void(0);" },
               on: {
-                "click": this.setChunk.bind(this, -1)
+                "click": this.first.bind(this)
               }
             },
-            ["<<"]
+            ["1"]
+          )]
+        ), h(
+          "li",
+          null,
+          [h(
+            "span",
+            { "class": "pagination-ellipsis" },
+            ["\u2026"]
           )]
         ), items, h(
+          "li",
+          null,
+          [h(
+            "span",
+            { "class": "pagination-ellipsis" },
+            ["\u2026"]
+          )]
+        ), h(
           "li",
           { "class": "VuePagination__pagination-item VuePagination__pagination-item-next-chunk " + this.allowedChunkClass(1) },
           [h(
             "a",
-            { "class": "pagination-link", attrs: { href: "javascript:void(0);"
-              },
+            { "class": "pagination-link " + this.activeClass(page), attrs: { href: "javascript:void(0);" },
               on: {
-                "click": this.setChunk.bind(this, 1)
+                "click": this.last.bind(this)
               }
             },
-            [">>"]
+            [this.totalPages]
           )]
         )]
-      ), h(
-        "p",
-        {
-          directives: [{
-            name: "show",
-            value: parseInt(this.records)
-          }],
-
-          "class": "VuePagination__count" },
-        [this.count]
       )]
     );
   };

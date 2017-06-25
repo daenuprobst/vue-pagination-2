@@ -109,6 +109,12 @@ module.exports = {
       }
     },
 
+    first: function first() {
+      return this.setPage(1);
+    },
+    last: function last() {
+      return this.setPage(this.totalPages);
+    },
     next: function next() {
       return this.setPage(this.page + 1);
     },
