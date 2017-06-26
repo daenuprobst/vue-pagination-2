@@ -65,7 +65,9 @@ module.exports =
       if (!this.records)
         return [];
 
-      return range(this.paginationStart, this.pagesInCurrentChunk);
+      let to = this.page + Math.round(this.chunk / 2.0);
+
+      return range(this.paginationStart, to >= this.totalPages ? this.totalPages : to);
     },
     totalPages: function() {
       return this.records?Math.ceil(this.records / this.perPage):1;
@@ -77,7 +79,8 @@ module.exports =
       return Math.ceil(this.page / this.chunk);
     },
     paginationStart: function() {
-     return ((this.currentChunk-1) * this.chunk) + 1;
+      let start = this.page - Math.round(this.chunkt / 2.0);
+      return start <= 1 ? 1 : start; 
    },
    pagesInCurrentChunk: function() {
 
