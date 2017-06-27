@@ -17,19 +17,28 @@ module.exports = function() {
   <ul v-show={this.totalPages>1}
   class="pagination-list VuePagination__pagination">
 
+  {!this.isPageVisible(1) &&
   <li class={"VuePagination__pagination-item VuePagination__pagination-item-prev-chunk "+this.allowedChunkClass(-1)}>
   <a class={"pagination-link "} href="javascript:void(0);" on-click={this.first.bind(this)}>1</a>
   </li>
+  }
 
+  {!this.isPageVisible(1) &&
   <li><span class="pagination-ellipsis">&hellip;</span></li>
+  }
 
   {items}
 
+  {!this.isPageVisible(this.totalPages) &&
   <li><span class="pagination-ellipsis">&hellip;</span></li>
-
+  }
+  
+  {!this.isPageVisible(this.totalPages) &&
   <li class={"VuePagination__pagination-item VuePagination__pagination-item-next-chunk "+this.allowedChunkClass(1)}>
   <a class={"pagination-link "} href="javascript:void(0);" on-click={this.last.bind(this)}>{this.totalPages}</a>
   </li>
+  }
+  
   </ul>
   </nav>
 }

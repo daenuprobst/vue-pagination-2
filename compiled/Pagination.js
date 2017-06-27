@@ -66,7 +66,33 @@ module.exports = {
     pages: function pages() {
       if (!this.records) return [];
 
-      return range(this.paginationStart, this.pagesInCurrentChunk);
+      var from = this.paginationStart;
+      var to = this.page + this.chunk;
+      var range = [];
+
+      if (to > this.totalPages) {
+        from += this.totalPages - to;
+      }
+
+      if (from < 1) {
+        from = 1;
+      }
+
+      if (to - from < this.chunk * 2) {
+        to += this.chunk * 2 - (to - from);
+      }
+
+      if (from < 1) {
+        from = 1;
+      }
+
+      to = to >= this.totalPages ? this.totalPages : to;
+
+      for (var i = from; i <= to; i++) {
+        range.push(i);
+      }
+
+      return range;
     },
     totalPages: function totalPages() {
       return this.records ? Math.ceil(this.records / this.perPage) : 1;
@@ -78,7 +104,8 @@ module.exports = {
       return Math.ceil(this.page / this.chunk);
     },
     paginationStart: function paginationStart() {
-      return (this.currentChunk - 1) * this.chunk + 1;
+      var start = this.page - this.chunk;
+      return start <= 1 ? 1 : start;
     },
     pagesInCurrentChunk: function pagesInCurrentChunk() {
 
@@ -144,6 +171,9 @@ module.exports = {
     },
     activeClass: function activeClass(page) {
       return this.page == page ? 'is-current' : '';
+    },
+    isPageVisible: function isPageVisible(page) {
+      return this.pages.indexOf(page) > -1;
     }
   }
 };

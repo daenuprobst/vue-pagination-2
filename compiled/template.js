@@ -47,7 +47,7 @@ module.exports = function () {
           }],
 
           "class": "pagination-list VuePagination__pagination" },
-        [h(
+        [!this.isPageVisible(1) && h(
           "li",
           { "class": "VuePagination__pagination-item VuePagination__pagination-item-prev-chunk " + this.allowedChunkClass(-1) },
           [h(
@@ -59,7 +59,7 @@ module.exports = function () {
             },
             ["1"]
           )]
-        ), h(
+        ), !this.isPageVisible(1) && h(
           "li",
           null,
           [h(
@@ -67,7 +67,7 @@ module.exports = function () {
             { "class": "pagination-ellipsis" },
             ["\u2026"]
           )]
-        ), items, h(
+        ), items, !this.isPageVisible(this.totalPages) && h(
           "li",
           null,
           [h(
@@ -75,7 +75,7 @@ module.exports = function () {
             { "class": "pagination-ellipsis" },
             ["\u2026"]
           )]
-        ), h(
+        ), !this.isPageVisible(this.totalPages) && h(
           "li",
           { "class": "VuePagination__pagination-item VuePagination__pagination-item-next-chunk " + this.allowedChunkClass(1) },
           [h(
